@@ -25,13 +25,16 @@ module.exports = () => {
 
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "service-worker.js",
+        swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: "Text Editor Application",
         short_name: "Text App",
         description:
           "Take notes with or without an internet connection to retrive them for a later use",
+        background_color: "#7eb4e2",
         start_url: "/",
         publicPath: "/",
         icons: [
